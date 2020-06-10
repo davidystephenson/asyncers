@@ -7,15 +7,13 @@ import table from '../lib/table'
 import Headers from './Headers'
 import Rows from './Rows'
 
-export default function Table ({ data, keyName }) {
-  if (!data || !data.length) {
+export default function Table (props) {
+  if (!props.data || !props.data.length) {
     return null
   }
 
-  const value = { data, key: keyName }
-
   return (
-    <table.Provider value={value}>
+    <table.Provider value={props}>
       <BootstrapTable
         bordered
         hover

@@ -2,11 +2,7 @@ import React from 'react'
 
 import Table from './Table'
 
-import useReader from '../use/reader'
-
-export default function Reports () {
-  const { reports } = useReader()
-
+export default function ReportTable ({ reports }) {
   function strip (report) {
     const {
       date,

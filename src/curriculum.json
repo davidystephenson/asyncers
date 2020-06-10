@@ -2705,8 +2705,8 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T13:19:37.777Z",
-    "name" : "js basics 1",
+    "modified_at" : "2020-06-10T12:12:58.021Z",
+    "name" : "setup and js basics",
     "notes" : "",
     "num_hearts" : 0,
     "num_likes" : 0,
@@ -2810,7 +2810,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -2916,7 +2916,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3022,7 +3022,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3128,7 +3128,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3234,7 +3234,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3340,7 +3340,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3446,7 +3446,7 @@
       "num_likes" : 0,
       "parent" : {
         "gid" : "1178671085864518",
-        "name" : "js basics 1",
+        "name" : "setup and js basics",
         "resource_type" : "task"
       },
       "projects" : [ ],
@@ -3828,7 +3828,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-05T14:33:50.664Z",
+    "modified_at" : "2020-06-10T12:13:07.420Z",
     "name" : "js basics 2",
     "notes" : "",
     "num_hearts" : 0,
@@ -26112,8 +26112,8 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:31:15.474Z",
-    "name" : "typescript + react",
+    "modified_at" : "2020-06-10T12:15:42.133Z",
+    "name" : "typescript and react",
     "notes" : "",
     "num_hearts" : 0,
     "num_likes" : 0,
@@ -29507,10 +29507,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178672675711142",
-        "color" : "blue-green",
+        "gid" : "1178672675644573",
+        "color" : "yellow-orange",
         "enabled" : true,
-        "name" : "demo",
+        "name" : "evaluation",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -29541,7 +29541,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:49:20.342Z",
+    "modified_at" : "2020-06-10T12:03:09.005Z",
     "name" : "graduation",
     "notes" : "",
     "num_hearts" : 0,

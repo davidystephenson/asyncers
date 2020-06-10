@@ -6,8 +6,11 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
+import { CurriculumProvider } from '../lib/curriculum'
+import report, { ReportProvider } from '../lib/report'
+
 import Curriculum from './Curriculum'
-import Reader from './Reader'
+import Reports from './Reports'
 import Progress from './Progress'
 
 export default function App () {
@@ -15,11 +18,15 @@ export default function App () {
     <Container>
       <Row>
         <Col>
-          <Progress />
+          <CurriculumProvider>
+            <ReportProvider>
+              <Reports context={report} />
 
-          <Reader />
+              <Progress />
+            </ReportProvider>
 
-          <Curriculum />
+            <Curriculum />
+          </CurriculumProvider>
         </Col>
       </Row>
     </Container>

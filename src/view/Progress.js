@@ -1,39 +1,46 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Badge from 'react-bootstrap/Badge'
 
 import Table from './Table'
 
-import useCurriculum from '../use/curriculum'
-import useReader from '../use/reader'
+import curriculum from '../lib/curriculum'
+import report from '../lib/report'
+
+function named (array, name) {
+  return array
+    .find(element => element.name === name)
+}
 
 export default function Progress () {
-  const { sections } = useCurriculum()
+  const { sections } = useContext(curriculum)
+  const { reports } = useContext(report)
 
   sections.forEach(section => (section.students = []))
 
-  const { reports } = useReader(0)
-
   const names = reports.map(report => report.name)
 
-  const students = [...new Set(names)]
+  const unique = [...new Set(names)]
 
-  students.forEach(student => {
-    const last = [...reports]
-      .reverse()
-      .find(report => report.name === student)
+  const reversed = [...reports].reverse()
 
-    const section = sections
-      .find(section => section.name === last.section)
+  function identify (name) {
+    const {
+      student, section
+    } = named(reversed, name)
 
-    const badge = (
-      <Badge variant='primary' key={last.id}>
-        {last.name}
+    const last = named(sections, section)
+
+    const id = (
+      <Badge variant='primary' key={student}>
+        {student}
       </Badge>
     )
 
-    section.students.push(badge)
-  })
+    last.students.push(id)
+  }
+
+  unique.forEach(identify)
 
   return (
     <>

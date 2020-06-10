@@ -1,17 +1,13 @@
-import React, { useContext } from 'react'
-
-import table from '../lib/table'
+import React from 'react'
 
 import Cell from './Cell'
 
-export default function Row (data) {
-  const value = useContext(table)
+export default function Row ({ data }) {
+  // console.log('data test:', data)
 
-  const key = data[value.key]
+  const entries = Object.entries(data)
+  // console.log('entry test:', entries[0])
+  const tds = entries.map(Cell)
 
-  const tds = Object
-    .entries(data)
-    .map(Cell)
-
-  return <tr key={key}>{tds}</tr>
+  return <tr>{tds}</tr>
 }
