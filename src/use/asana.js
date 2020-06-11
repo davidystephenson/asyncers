@@ -9,12 +9,16 @@ export default function useAsana (
 ) {
   const { data } = json
 
-  function parse ({
-    custom_fields: custom, name
-  }) {
+  function parse (
+    { custom_fields: custom, name }, index
+  ) {
     const extracted = custom.map(extract)
 
-    return format(name, extracted)
+    const formatted = format(name, extracted)
+
+    formatted.index = index
+
+    return formatted
   }
 
   const parsed = data.map(parse)

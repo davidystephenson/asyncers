@@ -15,8 +15,6 @@ export default function useFetch (url) {
   }
 
   async function retry (url, retries, delay) {
-    console.log('retry test:', url)
-
     await wait(delay)
 
     const newRetries = retries - 1
@@ -30,7 +28,6 @@ export default function useFetch (url) {
   async function getResponse (
     url, retries = 5, delay = 1000
   ) {
-    console.log('getResponse test:', url)
     const hopeful = retries > 0
 
     try {
@@ -68,7 +65,7 @@ export default function useFetch (url) {
       const json = await response.json()
 
       if (!json) {
-        console.warn('no json:', url, json)
+        console.warn('No json recevied from', url, json)
       }
 
       setData(json)

@@ -6,6 +6,8 @@ import curriculum from '../lib/curriculum'
 
 import useProgress from '../use/progress'
 
+import CheckCell from '../view/CheckCell'
+
 export default function Checkboard () {
   const { sections } = useContext(curriculum)
   const students = useProgress()
@@ -14,31 +16,10 @@ export default function Checkboard () {
     function Cell (student) {
       const work = student.sections[index]
 
-      const {
-        done, ignored, skipped
-      } = work
-
-      const style = {}
-
-      let content = null
-
-      if (done) {
-        style.background = 'green'
-        style.color = 'white'
-
-        content = done.time
-      } else {
-        if (ignored) {
-          style.background = 'red'
-        } else if (skipped) {
-          style.background = 'darkred'
-        }
-      }
-
       return (
-        <td style={style} key={student}>
-          {content}
-        </td>
+        <CheckCell
+          section={work} key={student.name}
+        />
       )
     }
 

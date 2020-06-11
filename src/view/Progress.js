@@ -17,26 +17,16 @@ export default function Progress () {
     reports, students
   } = useContext(report)
 
-  console.log('Progress students test:', students)
-
   const works = sections.map(enroll)
 
   const reversed = [...reports].reverse()
 
-  console.log('reversed test:', reversed)
-
   function identify (name) {
-    console.log('identify name test:', name)
-
     const { section } = reversed
       .find(report => report.student === name)
 
-    console.log('identify section test:', section)
-
     const last = works
       .find(work => work.name === section)
-
-    console.log('last test:', last)
 
     const id = (
       <Badge variant='primary' key={name}>

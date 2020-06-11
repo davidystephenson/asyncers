@@ -6,13 +6,7 @@ export default function SmallTable ({
   children
 }) {
   return (
-    <Table
-      bordered
-      hover
-      responsive
-      size='sm'
-      striped
-    >
+    <Table hover responsive size='sm'>
       {children}
     </Table>
   )

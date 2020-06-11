@@ -1,32 +1,60 @@
 import React from 'react'
 
-export default function CheckCell ({
-  done, theirs, index, section, similar, student
+function format ({
+  blocked, done, ignored, skipped, waiting, working
 }) {
-  const style = {}
-
-  let content = null
-
   if (done) {
-    style.background = 'green'
-    style.color = 'white'
-
-    content = done.time
-  } else {
-    const { ignored, skipped } = section
-
-    if (ignored) {
-      style.background = 'red'
-    }
-
-    if (skipped) {
-      style.background = 'darkred'
+    return {
+      background: 'green',
+      color: 'white',
+      text: done.time
     }
   }
 
-  return (
-    <td style={style} key={student}>
-      {content}
-    </td>
-  )
+  if (waiting) {
+    return {
+      background: 'orange',
+      text: 'waiting'
+    }
+  }
+
+  if (ignored) {
+    return {
+      background: 'red',
+      text: 'ignored'
+    }
+  }
+
+  if (skipped) {
+    return {
+      background: 'red',
+      text: 'skipped'
+    }
+  }
+
+  if (working) {
+    return {
+      background: 'lightgreen',
+      text: 'working'
+    }
+  }
+
+  if (blocked) {
+    return {
+      background: 'orangered',
+      text: 'blocked'
+    }
+  }
+
+  return {}
+}
+
+export default function CheckCell ({
+  section
+}) {
+  const formatted = format(section)
+
+  const { text, ...style } = formatted
+
+  return <td style={style}>{text}</td>
 }

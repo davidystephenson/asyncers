@@ -34,8 +34,13 @@ export default function useCurriculum () {
   const project = byType('project')
   const independent = byType('independent')
 
-  const blocking = sections
-    .filter(section => section.blocking)
+  const blocking = []
+  const nonBlocking = []
+
+  sections.forEach(section => section.blocking
+    ? blocking.push(section)
+    : nonBlocking.push(section)
+  )
 
   return {
     sections,
@@ -48,6 +53,7 @@ export default function useCurriculum () {
     exercise,
     project,
     independent,
-    blocking
+    blocking,
+    nonBlocking
   }
 }

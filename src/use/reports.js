@@ -13,6 +13,7 @@ const DEMO = 'whatDemoDidYouFinish?'
 const QUESTION = 'doYouHaveAnyQuestions?'
 const HELP = 'wouldYouLikeHelpNow?'
 const WELCOME = 'whatWelcomeSessionDidYouFinish?'
+const KICKOFF = 'whatKickoffDidYouFinish?'
 
 export default function useReports () {
   const { sections } = useContext(curriculum)
@@ -24,7 +25,6 @@ export default function useReports () {
   const copy = { ...response, reports: [] }
 
   function parse (report) {
-    console.log('report test:', report)
     function extract (key) {
       const value = report[key]
 
@@ -38,7 +38,6 @@ export default function useReports () {
     }
 
     const student = extract(STUDENT)
-    console.log('parse student test:', student)
     const type = extract(TYPE)
     const exercise = extract(EXERCISE)
     const lecture = extract(LECTURE)
@@ -47,17 +46,19 @@ export default function useReports () {
     const question = extract(QUESTION)
     const help = extract(HELP)
     const welcome = extract(WELCOME)
+    const kickoff = extract(KICKOFF)
 
     const types = {
       welcome,
       exercise,
       lecture,
       feedback,
-      demo
+      demo,
+      kickoff
     }
 
     const section = types[type]
-    const index = sections.findIndex(
+    const { index } = sections.find(
       element => element.name === section
     )
 
