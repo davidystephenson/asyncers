@@ -4,6 +4,16 @@ import curriculum from '../lib/curriculum'
 
 import useFetch from './fetch'
 
+const STUDENT = 'whatIsYourName?'
+const TYPE = 'whatDidYouJustFinish?'
+const EXERCISE = 'whatExerciseDidYouFinish?'
+const LECTURE = 'whatLectureDidYouFinish?'
+const FEEDBACK = 'whatFeedbackDidYouFinish?'
+const DEMO = 'whatDemoDidYouFinish?'
+const QUESTION = 'doYouHaveAnyQuestions?'
+const HELP = 'wouldYouLikeHelpNow?'
+const WELCOME = 'whatWelcomeSessionDidYouFinish?'
+
 export default function useReports () {
   const { sections } = useContext(curriculum)
 
@@ -14,6 +24,7 @@ export default function useReports () {
   const copy = { ...response, reports: [] }
 
   function parse (report) {
+    console.log('report test:', report)
     function extract (key) {
       const value = report[key]
 
@@ -26,19 +37,19 @@ export default function useReports () {
       return value
     }
 
-    // todo CONSTANTS
-    const STUDENT_KEY = 'whatIsYourName?'
-
-    const student = extract(STUDENT_KEY)
-    const type = extract('whatDidYouJustFinish?')
-    const exercise = extract('whatExerciseDidYouFinish?')
-    const lecture = extract('whatLectureDidYouFinish?')
-    const feedback = extract('whatFeedbackDidYouFinish?')
-    const demo = extract('whatDemoDidYouFinish?')
-    const question = extract('doYouHaveAnyQuestions?')
-    const help = extract('wouldYouLikeHelpNow?')
+    const student = extract(STUDENT)
+    console.log('parse student test:', student)
+    const type = extract(TYPE)
+    const exercise = extract(EXERCISE)
+    const lecture = extract(LECTURE)
+    const feedback = extract(FEEDBACK)
+    const demo = extract(DEMO)
+    const question = extract(QUESTION)
+    const help = extract(HELP)
+    const welcome = extract(WELCOME)
 
     const types = {
+      welcome,
       exercise,
       lecture,
       feedback,
@@ -85,9 +96,6 @@ export default function useReports () {
     .map(report => report.student)
 
   copy.students = [...new Set(students)]
-
-  console
-    .log('copy.students test:', copy.students)
 
   return copy
 }

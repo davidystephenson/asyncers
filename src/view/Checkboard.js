@@ -3,51 +3,20 @@ import React, { useContext } from 'react'
 import Table from './SmallTable'
 
 import curriculum from '../lib/curriculum'
-import report from '../lib/report'
+
+import useProgress from '../use/progress'
 
 export default function Checkboard () {
   const { sections } = useContext(curriculum)
-
-  const {
-    reports, students
-  } = useContext(report)
-
-  console.log('reports test:', reports)
-
-  console.log('students test:', students)
+  const students = useProgress()
 
   function Row (section, index) {
-    const similar = filter(
-      'type', section.type, reports
-    )
-
-    function filter (
-      key, value, array = similar
-    ) {
-      return array.filter(
-        report => report[key] === value
-      )
-    }
-
-    const same = filter(
-      'section', section.name
-    )
-
     function Cell (student) {
-      const theirs = filter(
-        'student', student, reports
-      )
+      const work = student.sections[index]
 
-      function did (report) {
-        const isSection = same.includes(report)
-
-        const isStudent = theirs
-          .includes(report)
-
-        return isSection && isStudent
-      }
-
-      const done = same.find(did)
+      const {
+        done, ignored, skipped
+      } = work
 
       const style = {}
 
@@ -59,31 +28,10 @@ export default function Checkboard () {
 
         content = done.time
       } else {
-        const later = theirs.some(
-          element => element.index > index
-        )
-
-        const { blocking } = section
-
-        const skipped = blocking && later
-
-        if (section.name === 'installation instructions') {
-          console.log('theirs test:', theirs)
-          console.log('later test:', later)
-          console.log('blocking test:', blocking)
-          console.log('skipped test:', skipped)
-        }
-
-        if (skipped) {
+        if (ignored) {
           style.background = 'red'
-        } else {
-          const more = similar.some(
-            element => element.index > index
-          )
-
-          if (more) {
-            style.background = 'darkred'
-          }
+        } else if (skipped) {
+          style.background = 'darkred'
         }
       }
 
@@ -108,7 +56,9 @@ export default function Checkboard () {
   }
 
   function Header (student) {
-    return <th key={student}>{student}</th>
+    const { name } = student
+
+    return <th key={name}>{name}</th>
   }
 
   const rows = sections.map(Row)

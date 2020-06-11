@@ -13,30 +13,13 @@ export default function CheckCell ({
 
     content = done.time
   } else {
-    const later = theirs.some(
-      element => element.index > index
-    )
+    const { ignored, skipped } = section
 
-    const { blocking } = section
-
-    const skipped = blocking && later
-
-    if (section.name === 'installation instructions') {
-      console.log('theirs test:', theirs)
-      console.log('later test:', later)
-      console.log('blocking test:', blocking)
-      console.log('skipped test:', skipped)
-    }
-
-    if (skipped) {
+    if (ignored) {
       style.background = 'red'
     }
 
-    const more = similar.some(
-      element => element.index > index
-    )
-
-    if (more) {
+    if (skipped) {
       style.background = 'darkred'
     }
   }
