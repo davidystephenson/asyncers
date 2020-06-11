@@ -1,6 +1,12 @@
+import { useContext } from 'react'
+
+import curriculum from '../lib/curriculum'
+
 import useFetch from './fetch'
 
 export default function useReports () {
+  const { sections } = useContext(curriculum)
+
   const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/reports'
 
   const response = useFetch(URL)
@@ -20,7 +26,10 @@ export default function useReports () {
       return value
     }
 
-    const student = extract('whatIsYourName?')
+    // todo CONSTANTS
+    const STUDENT_KEY = 'whatIsYourName?'
+
+    const student = extract(STUDENT_KEY)
     const type = extract('whatDidYouJustFinish?')
     const exercise = extract('whatExerciseDidYouFinish?')
     const lecture = extract('whatLectureDidYouFinish?')
@@ -37,6 +46,9 @@ export default function useReports () {
     }
 
     const section = types[type]
+    const index = sections.findIndex(
+      element => element.name === section
+    )
 
     const epoch = Date.parse(report.timestamp)
     const date = new Date(epoch)
@@ -48,6 +60,8 @@ export default function useReports () {
       epoch,
       section,
       student,
+      type,
+      index,
       time,
       help,
       question,
@@ -65,6 +79,15 @@ export default function useReports () {
 
   copy.oldest = [...copy.reports]
     .sort((a, b) => a.date - b.date)
+
+  const students = copy
+    .reports
+    .map(report => report.student)
+
+  copy.students = [...new Set(students)]
+
+  console
+    .log('copy.students test:', copy.students)
 
   return copy
 }

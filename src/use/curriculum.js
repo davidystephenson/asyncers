@@ -1,15 +1,53 @@
 import curriculum from '../curriculum.json'
 
+import useAsana from '../use/asana'
+import useWorkflow from '../use/workflow'
+
 export default function useCurriculum () {
-  const { data } = curriculum
+  const { types } = useWorkflow()
 
-  function parse ({ custom_fields: custom, name }) {
-    const [{ enum_value: { name: type } }] = custom
+  function format (name, fields) {
+    const [type] = fields
 
-    return { name, type }
+    const work = types
+      .find(element => element.name === type)
+
+    const { blocking } = work
+
+    return { name, type, blocking }
   }
 
-  const sections = data.map(parse)
+  const sections = useAsana(curriculum, format)
 
-  return { sections }
+  function byType (type) {
+    return sections
+      .filter(section => section.type === type)
+  }
+
+  const welcome = byType('welcome')
+  const kickoff = byType('kickoff')
+  const evaluation = byType('evaluation')
+  const feedback = byType('feedback')
+  const lecture = byType('lecture')
+  const demo = byType('demo')
+  const exercise = byType('exercise')
+  const project = byType('project')
+  const independent = byType('independent')
+
+  const blocking = sections
+    .filter(section => section.blocking)
+
+  return {
+    sections,
+    welcome,
+    kickoff,
+    evaluation,
+    feedback,
+    lecture,
+    demo,
+    exercise,
+    project,
+    independent,
+    blocking
+  }
 }

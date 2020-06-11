@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row'
 import { CurriculumProvider } from '../lib/curriculum'
 import report, { ReportProvider } from '../lib/report'
 
+import Checkboard from './Checkboard'
 import Curriculum from './Curriculum'
 import Reports from './Reports'
 import Progress from './Progress'
@@ -20,6 +21,8 @@ export default function App () {
         <Col>
           <CurriculumProvider>
             <ReportProvider>
+              <Checkboard />
+
               <Reports context={report} />
 
               <Progress />

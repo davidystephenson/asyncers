@@ -1,6 +1,6 @@
 import React from 'react'
 
-import BootstrapTable from 'react-bootstrap/Table'
+import SmallTable from './SmallTable'
 
 import table from '../lib/table'
 
@@ -14,13 +14,7 @@ export default function Table (props) {
 
   return (
     <table.Provider value={props}>
-      <BootstrapTable
-        bordered
-        hover
-        responsive
-        size='sm'
-        striped
-      >
+      <SmallTable>
         <thead>
           <tr>
             <Headers />
@@ -30,7 +24,7 @@ export default function Table (props) {
         <tbody>
           <Rows />
         </tbody>
-      </BootstrapTable>
+      </SmallTable>
     </table.Provider>
   )
 }

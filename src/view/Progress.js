@@ -7,29 +7,36 @@ import Table from './Table'
 import curriculum from '../lib/curriculum'
 import report from '../lib/report'
 
-function named (array, name) {
-  return array
-    .find(element => element.name === name)
+function enroll (section) {
+  return { ...section, students: [] }
 }
 
 export default function Progress () {
   const { sections } = useContext(curriculum)
-  const { reports } = useContext(report)
+  const {
+    reports, students
+  } = useContext(report)
 
-  sections.forEach(section => (section.students = []))
-
-  const names = reports.map(report => report.name)
-
-  const unique = [...new Set(names)]
+  const works = sections.map(enroll)
 
   const reversed = [...reports].reverse()
 
+  console.log('reversed test:', reversed)
+
   function identify (name) {
+    console.log('identify name test:', name)
+
     const {
       student, section
-    } = named(reversed, name)
+    } = reversed
+      .find(report => report.student === name)
 
-    const last = named(sections, section)
+    console.log('identify section test:', section)
+
+    const last = works
+      .find(work => work.name === section)
+
+    console.log('last test:', last)
 
     const id = (
       <Badge variant='primary' key={student}>
@@ -40,7 +47,7 @@ export default function Progress () {
     last.students.push(id)
   }
 
-  unique.forEach(identify)
+  students.forEach(identify)
 
   return (
     <>
