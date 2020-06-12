@@ -3,6 +3,8 @@ import { useContext } from 'react'
 import curriculum from '../lib/curriculum'
 import report from '../lib/report'
 
+import useEvaluations from '../use/evaluations'
+
 const RELATIONS = [
   ['installation instructions', 'prework'],
   ['first practice feedback', 'first practice'],
@@ -32,13 +34,20 @@ export default function useProgress () {
     reports, students
   } = useContext(report)
 
+  const evaluations = useEvaluations()
+
+  const combined = [...reports, ...evaluations]
+    .sort((a, b) => a.date - b.date)
+
   function track (student) {
     const theirs = filter(
-      'student', student, reports
+      'student', student, combined
     )
 
     function check (section, index) {
-      const { name, blocking, type } = section
+      const {
+        name, blocking, retry, type
+      } = section
 
       function after (element) {
         return element.index > index
@@ -53,16 +62,12 @@ export default function useProgress () {
       if (!done) {
         data.later = theirs.some(after)
 
-        const retry = name.includes('retry')
-
         if (data.later && !retry) {
           if (blocking) data.ignored = true
           else {
             const similar = theirs.filter(
               report => report.type === type
             )
-
-            console.log('similar test:', similar)
 
             const skipped = similar.some(after)
 
@@ -88,11 +93,6 @@ export default function useProgress () {
       )
 
       if (covered) covered.done = coverer
-
-      if (give === 'first practice feedback') {
-        console.log('student test:', student)
-        console.log('coverer test:', coverer)
-      }
     }
 
     RELATIONS.map(cover)
@@ -101,17 +101,21 @@ export default function useProgress () {
       return !section.done
     }
 
-    function focus (blocking = true) {
-      function timing (section) {
-        return section.blocking === blocking
-      }
-
-      const timed = sections.filter(timing)
+    function focus (valid, array) {
+      const timed = array.filter(valid)
 
       return timed.find(not)
     }
 
-    const next = focus()
+    function working (section) {
+      const { blocking, retry } = section
+
+      const time = blocking === true
+
+      return time && !retry
+    }
+
+    const next = focus(working, sections)
     next.next = true
 
     if (next.type === 'kickoff') {
@@ -120,18 +124,44 @@ export default function useProgress () {
       next.working = true
     }
 
-    const ready = focus(false)
+    function wait (target) {
+      function waiting (section, index) {
+        const { type, retry } = section
+        const similar = type === target
+        const match = similar && !retry
 
-    const { index } = ready
-    const before = sections.slice(0, index)
+        return match
+      }
 
-    const all = before
-      .every(section => section.done)
+      const focused = focus(waiting, sections)
 
-    if (all) {
-      ready.next = true
-      ready.waiting = true
+      const index = sections.findIndex(
+        element => element.name === focused.name
+      )
+
+      const before = sections.slice(0, index)
+
+      function consider (section) {
+        const { blocking, type } = section
+        const similar = type === target
+
+        if (blocking || similar) {
+          return section.done
+        }
+
+        return true
+      }
+
+      const all = before.every(consider)
+
+      if (all) {
+        focused.next = true
+        focused.waiting = true
+      }
     }
+
+    wait('feedback')
+    wait('lecture')
 
     return { name: student, sections }
   }
