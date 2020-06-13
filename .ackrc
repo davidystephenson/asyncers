@@ -1,0 +1,3 @@
+# configuration for ack, a grep-like searcher
+
+--ignore-file=ext:json
