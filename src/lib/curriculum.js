@@ -1,17 +1,10 @@
-import React, { createContext } from 'react'
-
 import useCurriculum from '../use/curriculum'
 
-const curriculum = createContext()
+import construct from './construct'
 
-export function CurriculumProvider ({ children }) {
-  const value = useCurriculum()
-
-  return (
-    <curriculum.Provider value={value}>
-      {children}
-    </curriculum.Provider>
-  )
-}
+export const {
+  context: curriculum,
+  Provider: CurriculumProvider
+} = construct(useCurriculum)
 
 export default curriculum

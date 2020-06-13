@@ -5,6 +5,8 @@ import report from '../lib/report'
 
 import useEvaluations from '../use/evaluations'
 
+import { hoursFromNow } from '../utils'
+
 const RELATIONS = [
   ['installation instructions', 'prework'],
   ['first practice feedback', 'first practice'],
@@ -57,7 +59,13 @@ export default function useProgress () {
         report => report.section === name
       )
 
-      const data = { ...section, done }
+      const data = {
+        ...section,
+        done,
+        index,
+        section: name,
+        student
+      }
 
       if (!done) {
         data.later = theirs.some(after)
@@ -101,10 +109,42 @@ export default function useProgress () {
       return !section.done
     }
 
-    function focus (valid, array) {
-      const timed = array.filter(valid)
+    function focus (test) {
+      const valid = sections.filter(test)
 
-      return timed.find(not)
+      const index = valid.findIndex(not)
+
+      const didnt = valid[index]
+
+      if (index === 0) {
+        const before = sections
+          .slice(0, didnt.index)
+
+        const consider = function consider (
+          section
+        ) {
+          const { blocking, type } = section
+          const similar = type === didnt.type
+
+          if (blocking || similar) {
+            return section
+          }
+        }
+
+        const last = before.find(consider)
+        didnt.since = last
+      } else {
+        const since = valid[index - 1]
+        didnt.since = since
+      }
+
+      console.log('didnt test:', didnt)
+
+      const { date } = didnt.since.done
+
+      didnt.hours = hoursFromNow(date)
+
+      return didnt
     }
 
     function working (section) {
@@ -115,7 +155,7 @@ export default function useProgress () {
       return time && !retry
     }
 
-    const next = focus(working, sections)
+    const next = focus(working)
     next.next = true
 
     if (next.type === 'kickoff') {
@@ -133,7 +173,7 @@ export default function useProgress () {
         return match
       }
 
-      const focused = focus(waiting, sections)
+      const focused = focus(waiting)
 
       const index = sections.findIndex(
         element => element.name === focused.name

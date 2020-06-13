@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import Table from './SmallTable'
+import Thead from './Thead'
 
 import curriculum from '../lib/curriculum'
 
@@ -47,13 +48,11 @@ export default function Checkboard () {
 
   const heads = students.map(Header)
   const head = (
-    <thead>
-      <tr>
-        <th>Section</th>
-        <th>Type</th>
-        {heads}
-      </tr>
-    </thead>
+    <Thead>
+      <th>Section</th>
+      <th>Type</th>
+      {heads}
+    </Thead>
   )
 
   const table = <Table>{head}{body}</Table>

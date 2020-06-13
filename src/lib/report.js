@@ -1,17 +1,10 @@
-import React, { createContext } from 'react'
-
 import useReports from '../use/reports'
 
-const report = createContext()
+import construct from './construct'
 
-export function ReportProvider ({ children }) {
-  const value = useReports()
-
-  return (
-    <report.Provider value={value}>
-      {children}
-    </report.Provider>
-  )
-}
+export const {
+  context: report,
+  Provider: ReportProvider
+} = construct(useReports)
 
 export default report

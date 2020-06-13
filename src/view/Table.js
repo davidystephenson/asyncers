@@ -6,6 +6,7 @@ import table from '../lib/table'
 
 import Headers from './Headers'
 import Rows from './Rows'
+import Thead from './Thead'
 
 export default function Table (props) {
   if (!props.data || !props.data.length) {
@@ -15,11 +16,9 @@ export default function Table (props) {
   return (
     <table.Provider value={props}>
       <SmallTable>
-        <thead>
-          <tr>
-            <Headers />
-          </tr>
-        </thead>
+        <Thead>
+          <Headers />
+        </Thead>
 
         <tbody>
           <Rows />

@@ -52,10 +52,6 @@ function format ({
 export default function CheckCell ({
   section
 }) {
-  if (section.name === 'express feedback') {
-    console.log('section test:', section)
-  }
-
   const formatted = format(section)
 
   const { text, ...style } = formatted
