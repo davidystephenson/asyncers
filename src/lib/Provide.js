@@ -3,7 +3,7 @@ import React from 'react'
 export default function Provide ({
   children, context, hook, value
 }) {
-  const hooked = hook()
+  const hooked = hook && hook()
 
   const valued = value || hooked
 

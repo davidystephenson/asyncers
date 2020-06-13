@@ -2,7 +2,7 @@ import React from 'react'
 
 import SmallTable from './SmallTable'
 
-import table from '../lib/table'
+import { TableProvider } from '../lib'
 
 import Headers from './Headers'
 import Rows from './Rows'
@@ -14,7 +14,7 @@ export default function Table (props) {
   }
 
   return (
-    <table.Provider value={props}>
+    <TableProvider value={props}>
       <SmallTable>
         <Thead>
           <Headers />
@@ -24,6 +24,6 @@ export default function Table (props) {
           <Rows />
         </tbody>
       </SmallTable>
-    </table.Provider>
+    </TableProvider>
   )
 }

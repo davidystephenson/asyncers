@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { studentsContext } from '../lib'
 
 import Figure from './Figure'
 import Hours from './Hours'
 
-import useProgress from '../use/progress'
-
 export default function Waiting () {
-  const students = useProgress()
+  const students = useContext(studentsContext)
 
   function track (done, student) {
     const did = student

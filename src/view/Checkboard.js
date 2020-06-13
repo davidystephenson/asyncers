@@ -3,15 +3,18 @@ import React, { useContext } from 'react'
 import Table from './SmallTable'
 import Thead from './Thead'
 
-import { curriculumContext } from '../lib'
-
-import useProgress from '../use/progress'
+import {
+  curriculumContext,
+  studentsContext
+} from '../lib'
 
 import CheckCell from '../view/CheckCell'
 
 export default function Checkboard () {
-  const { sections } = useContext(curriculumContext)
-  const students = useProgress()
+  const {
+    sections
+  } = useContext(curriculumContext)
+  const students = useContext(studentsContext)
 
   function Row (section, index) {
     function Cell (student) {

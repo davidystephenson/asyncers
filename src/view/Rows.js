@@ -1,11 +1,13 @@
 import React, { useContext } from 'react'
 
-import table from '../lib/table'
+import { tableContext } from '../lib/'
 
 import Row from './Row'
 
 export default function Rows () {
-  const { data, keyName } = useContext(table)
+  const {
+    data, keyName
+  } = useContext(tableContext)
 
   function Rower (datum, index) {
     const keyValue = datum[keyName]

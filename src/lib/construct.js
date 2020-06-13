@@ -7,9 +7,13 @@ export default function construct (
 ) {
   const context = createContext()
 
-  function Provider ({ children }) {
+  function Provider ({ children, value }) {
     return (
-      <Provide context={context} hook={hook}>
+      <Provide
+        context={context}
+        hook={hook}
+        value={value}
+      >
         {children}
       </Provide>
     )

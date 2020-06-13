@@ -31,7 +31,7 @@ function filter (key, value, array) {
   )
 }
 
-export default function useProgress () {
+export default function useStudents () {
   const course = useContext(curriculumContext)
   const {
     reports, students
