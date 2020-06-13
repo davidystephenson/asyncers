@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Section from './Section'
 import Table from './Table'
 
 export default function Figure ({
@@ -7,11 +8,9 @@ export default function Figure ({
   keyName,
   title
 }) {
-  const heading = <h1>{title}</h1>
-
-  const table = (
-    <Table data={data} keyName={keyName} />
+  return (
+    <Section title={title}>
+      <Table data={data} keyName={keyName} />
+    </Section>
   )
-
-  return <>{heading} {table}</>
 }

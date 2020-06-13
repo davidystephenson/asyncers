@@ -133,17 +133,13 @@ export default function useStudents () {
         }
 
         const last = before.find(consider)
-        didnt.since = last
+        didnt.since = last.done.date
       } else {
         const since = valid[index - 1]
-        didnt.since = since
+        didnt.since = since.done.date
       }
 
-      console.log('didnt test:', didnt)
-
-      const { date } = didnt.since.done
-
-      didnt.hours = hoursFromNow(date)
+      didnt.hours = hoursFromNow(didnt.since)
 
       return didnt
     }

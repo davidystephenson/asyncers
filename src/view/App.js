@@ -12,8 +12,9 @@ import {
   StudentsProvider
 } from '../lib'
 
-import Checkboard from './Checkboard'
-import Waiting from './Waiting'
+import Courseboard from './Courseboard'
+import Skipped from './Skipped'
+import Status from './Status'
 
 export default function App () {
   return (
@@ -23,9 +24,12 @@ export default function App () {
           <CurriculumProvider>
             <ReportsProvider>
               <StudentsProvider>
-                <Waiting />
+                <Skipped />
+                <Status status='Blocked' />
+                <Status status='Waiting' />
+                <Status status='Working' />
 
-                <Checkboard />
+                <Courseboard />
               </StudentsProvider>
             </ReportsProvider>
           </CurriculumProvider>

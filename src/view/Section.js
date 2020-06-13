@@ -1,12 +1,9 @@
 import React from 'react'
 
-export default function Section ({
-  name, type
+export default function Caption ({
+  children, title
 }) {
-  return (
-    <tr key={name}>
-      <td>{name}</td>
-      <td>{type}</td>
-    </tr>
-  )
+  const heading = <h1>{title}</h1>
+
+  return <>{heading} {children}</>
 }

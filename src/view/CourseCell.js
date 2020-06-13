@@ -1,5 +1,6 @@
 import React from 'react'
 
+// todo CSS
 function format ({
   blocked, done, ignored, skipped, waiting, working
 }) {
@@ -49,7 +50,7 @@ function format ({
   return {}
 }
 
-export default function CheckCell ({
+export default function CourseCell ({
   section
 }) {
   const formatted = format(section)

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 
+import Section from './Section'
 import Table from './SmallTable'
 import Thead from './Thead'
 
@@ -8,9 +9,9 @@ import {
   studentsContext
 } from '../lib'
 
-import CheckCell from '../view/CheckCell'
+import CourseCell from '../view/CourseCell'
 
-export default function Checkboard () {
+export default function Courseboard () {
   const {
     sections
   } = useContext(curriculumContext)
@@ -21,7 +22,7 @@ export default function Checkboard () {
       const work = student.sections[index]
 
       return (
-        <CheckCell
+        <CourseCell
           section={work} key={student.name}
         />
       )
@@ -60,7 +61,9 @@ export default function Checkboard () {
 
   const table = <Table>{head}{body}</Table>
 
-  const heading = <h1>Checkboard</h1>
-
-  return <>{heading} {table}</>
+  return (
+    <Section title='Courseboard'>
+      {table}
+    </Section>
+  )
 }
