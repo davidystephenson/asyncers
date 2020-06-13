@@ -6,8 +6,9 @@ import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 
-import { CurriculumProvider } from '../lib/curriculum'
-import { ReportProvider } from '../lib/report'
+import {
+  CurriculumProvider, ReportsProvider
+} from '../lib'
 
 import Checkboard from './Checkboard'
 import Waiting from './Waiting'
@@ -18,11 +19,11 @@ export default function App () {
       <Row>
         <Col>
           <CurriculumProvider>
-            <ReportProvider>
+            <ReportsProvider>
               <Waiting />
 
               <Checkboard />
-            </ReportProvider>
+            </ReportsProvider>
           </CurriculumProvider>
         </Col>
       </Row>

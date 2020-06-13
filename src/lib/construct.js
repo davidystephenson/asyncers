@@ -2,7 +2,9 @@ import React, { createContext } from 'react'
 
 import Provide from './Provide'
 
-export default function context (hook) {
+export default function construct (
+  hook, name
+) {
   const context = createContext()
 
   function Provider ({ children }) {
@@ -13,5 +15,13 @@ export default function context (hook) {
     )
   }
 
-  return { context, Provider }
+  const lower = name.toLowerCase()
+
+  const contextKey = `${lower}Context`
+  const providerKey = `${name}Provider`
+
+  return {
+    [contextKey]: context,
+    [providerKey]: Provider
+  }
 }

@@ -1,11 +1,13 @@
 import { useContext } from 'react'
 
-import curriculum from '../lib/curriculum'
+import { curriculumContext } from '../lib/'
 
 import useFetch from './fetch'
 
 export default function useReports () {
-  const { sections } = useContext(curriculum)
+  const {
+    sections
+  } = useContext(curriculumContext)
 
   const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/evaluations'
 

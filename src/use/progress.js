@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 
-import curriculum from '../lib/curriculum'
-import report from '../lib/report'
+import {
+  curriculumContext, reportsContext
+} from '../lib'
 
 import useEvaluations from '../use/evaluations'
 
@@ -31,10 +32,10 @@ function filter (key, value, array) {
 }
 
 export default function useProgress () {
-  const course = useContext(curriculum)
+  const course = useContext(curriculumContext)
   const {
     reports, students
-  } = useContext(report)
+  } = useContext(reportsContext)
 
   const evaluations = useEvaluations()
 
