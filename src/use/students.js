@@ -3,10 +3,9 @@ import { useContext } from 'react'
 import {
   curriculumContext, reportsContext
 } from '../lib'
+import { hoursFromNow } from '../lib/utils'
 
 import useEvaluations from '../use/evaluations'
-
-import { hoursFromNow } from '../utils'
 
 const RELATIONS = [
   ['installation instructions', 'prework'],
@@ -72,7 +71,7 @@ export default function useStudents () {
         data.later = theirs.some(after)
 
         if (data.later && !retry) {
-          if (blocking) data.ignored = true
+          if (blocking) data.skipped = true
           else {
             const similar = theirs.filter(
               report => report.type === type
@@ -145,14 +144,13 @@ export default function useStudents () {
     }
 
     function working (section) {
-      const { blocking, retry } = section
+      const { blocking, retry, skipped } = section
 
-      const time = blocking === true
-
-      return time && !retry
+      return blocking && !skipped && !retry
     }
 
     const next = focus(working)
+
     next.next = true
 
     if (next.type === 'kickoff') {

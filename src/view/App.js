@@ -24,12 +24,12 @@ export default function App () {
           <CurriculumProvider>
             <ReportsProvider>
               <StudentsProvider>
+                <Courseboard />
+
                 <Skipped />
                 <Status status='Blocked' />
                 <Status status='Waiting' />
                 <Status status='Working' />
-
-                <Courseboard />
               </StudentsProvider>
             </ReportsProvider>
           </CurriculumProvider>
