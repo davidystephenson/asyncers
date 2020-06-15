@@ -4,16 +4,17 @@ import { curriculumContext } from '../lib/'
 
 import useFetch from './fetch'
 
+const DEMO = 'whatDemoDidYouFinish?'
+const EXERCISE = 'whatExerciseDidYouFinish?'
+const FEEDBACK = 'whatFeedbackDidYouFinish?'
+const HELP = 'wouldYouLikeHelpNow?'
+const KICKOFF = 'whatKickoffDidYouFinish?'
+const LECTURE = 'whatLectureDidYouFinish?'
+const PROJECT = 'whatProjectDidYouFinish?'
+const QUESTION = 'doYouHaveAnyQuestions?'
 const STUDENT = 'whatIsYourName?'
 const TYPE = 'whatDidYouJustFinish?'
-const EXERCISE = 'whatExerciseDidYouFinish?'
-const LECTURE = 'whatLectureDidYouFinish?'
-const FEEDBACK = 'whatFeedbackDidYouFinish?'
-const DEMO = 'whatDemoDidYouFinish?'
-const QUESTION = 'doYouHaveAnyQuestions?'
-const HELP = 'wouldYouLikeHelpNow?'
 const WELCOME = 'whatWelcomeSessionDidYouFinish?'
-const KICKOFF = 'whatKickoffDidYouFinish?'
 
 export default function useReports () {
   const {
@@ -48,6 +49,7 @@ export default function useReports () {
     const question = extract(QUESTION)
     const help = extract(HELP)
     const welcome = extract(WELCOME)
+    const project = extract(PROJECT)
     const kickoff = extract(KICKOFF)
 
     const types = {
@@ -56,13 +58,18 @@ export default function useReports () {
       lecture,
       feedback,
       demo,
+      project,
       kickoff
     }
 
     const section = types[type]
-    const { index } = sections.find(
-      element => element.name === section
-    )
+    const entity = sections
+      .find(({ name }) => name === section)
+
+    if (!entity) {
+      console.warn('missing section:', section)
+      console.warn('available sections:', sections)
+    }
 
     const epoch = Date.parse(report.timestamp)
     const date = new Date(epoch)
@@ -75,7 +82,7 @@ export default function useReports () {
       section,
       student,
       type,
-      index,
+      index: entity.index,
       time,
       help,
       question,

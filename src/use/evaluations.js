@@ -3,11 +3,16 @@ import { useContext } from 'react'
 import { curriculumContext } from '../lib/'
 
 import useFetch from './fetch'
+import useWorkflow from './workflow'
 
 export default function useReports () {
   const {
     sections
   } = useContext(curriculumContext)
+
+  const { types } = useWorkflow()
+
+  console.log('types test:', types)
 
   const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/evaluations'
 
@@ -32,6 +37,9 @@ export default function useReports () {
     const section = extract('what')
     const score = extract('score')
     const comments = extract('comments')
+    const retry = extract('retry')
+
+    console.log('section test:', section)
 
     const { index } = sections.find(
       element => element.name === section
@@ -47,9 +55,10 @@ export default function useReports () {
       epoch,
       section,
       student,
-      type: 'evaluation',
+      type: types.evaluation,
       index,
       time,
+      retry,
       score,
       comments,
       timestamp: report.timestamp
@@ -57,6 +66,7 @@ export default function useReports () {
   }
 
   if (response.data) {
+    console.log('reponse.data test:', response.data)
     const raw = response.data.evaluations
 
     const parsed = raw.map(parse)

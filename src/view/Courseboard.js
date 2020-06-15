@@ -35,7 +35,7 @@ export default function Courseboard () {
     return (
       <tr key={name}>
         <td>{name}</td>
-        <td>{type}</td>
+        <td>{type.name}</td>
         {cells}
       </tr>
     )

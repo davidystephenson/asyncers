@@ -19,13 +19,6 @@ function format ({
     }
   }
 
-  if (ignored) {
-    return {
-      background: 'red',
-      text: 'ignored'
-    }
-  }
-
   if (skipped) {
     return {
       background: 'red',

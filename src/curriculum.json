@@ -4400,8 +4400,8 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T13:36:20.699Z",
-    "name" : "data manipulation ",
+    "modified_at" : "2020-06-14T16:18:07.458Z",
+    "name" : "data manipulation",
     "notes" : "",
     "num_hearts" : 0,
     "num_likes" : 0,
@@ -7006,7 +7006,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T21:44:48.787Z",
+    "modified_at" : "2020-06-14T16:31:58.357Z",
     "name" : "asynchronous behavior",
     "notes" : "",
     "num_hearts" : 0,
@@ -13192,7 +13192,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T13:44:55.762Z",
+    "modified_at" : "2020-06-14T18:56:49.246Z",
     "name" : "first practice feedback",
     "notes" : "",
     "num_hearts" : 0,
@@ -13412,10 +13412,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178695155495728",
-        "color" : "indigo",
+        "gid" : "1178686169297575",
+        "color" : "blue",
         "enabled" : true,
-        "name" : "independent",
+        "name" : "project",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -13446,7 +13446,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T13:46:03.278Z",
+    "modified_at" : "2020-06-14T11:18:23.078Z",
     "name" : "first assessment",
     "notes" : "",
     "num_hearts" : 0,
@@ -13933,8 +13933,8 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T13:46:56.484Z",
-    "name" : "first assessment feedback",
+    "modified_at" : "2020-06-14T19:41:35.088Z",
+    "name" : "first feedback",
     "notes" : "",
     "num_hearts" : 0,
     "num_likes" : 0,
@@ -14153,10 +14153,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178695155495728",
-        "color" : "indigo",
+        "gid" : "1178686169297575",
+        "color" : "blue",
         "enabled" : true,
-        "name" : "independent",
+        "name" : "project",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -14187,7 +14187,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T22:26:21.470Z",
+    "modified_at" : "2020-06-14T11:18:26.363Z",
     "name" : "first retry",
     "notes" : "",
     "num_hearts" : 0,
@@ -24715,7 +24715,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:26:18.705Z",
+    "modified_at" : "2020-06-14T18:57:22.360Z",
     "name" : "second practice feedback",
     "notes" : "",
     "num_hearts" : 0,
@@ -24842,8 +24842,8 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T17:06:44.801Z",
-    "name" : "second assessment briefing",
+    "modified_at" : "2020-06-14T19:41:24.492Z",
+    "name" : "second briefing",
     "notes" : "",
     "num_hearts" : 0,
     "num_likes" : 0,
@@ -24935,10 +24935,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178695155495728",
-        "color" : "indigo",
+        "gid" : "1178686169297575",
+        "color" : "blue",
         "enabled" : true,
-        "name" : "independent",
+        "name" : "project",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -24969,7 +24969,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:28:29.890Z",
+    "modified_at" : "2020-06-14T11:18:06.048Z",
     "name" : "second assessment",
     "notes" : "",
     "num_hearts" : 0,
@@ -25570,10 +25570,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178695155495728",
-        "color" : "indigo",
+        "gid" : "1178686169297575",
+        "color" : "blue",
         "enabled" : true,
-        "name" : "independent",
+        "name" : "project",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -25604,7 +25604,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T22:27:47.197Z",
+    "modified_at" : "2020-06-14T11:18:03.832Z",
     "name" : "second retry",
     "notes" : "",
     "num_hearts" : 0,
@@ -27001,7 +27001,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:35:48.857Z",
+    "modified_at" : "2020-06-11T19:20:43.353Z",
     "name" : "jest",
     "notes" : "",
     "num_hearts" : 0,
@@ -28144,7 +28144,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:46:04.964Z",
+    "modified_at" : "2020-06-14T18:57:36.944Z",
     "name" : "portfolio feedback",
     "notes" : "",
     "num_hearts" : 0,
@@ -28237,10 +28237,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178695155495728",
-        "color" : "indigo",
+        "gid" : "1178686169297575",
+        "color" : "blue",
         "enabled" : true,
-        "name" : "independent",
+        "name" : "project",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -28271,7 +28271,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:50:22.702Z",
+    "modified_at" : "2020-06-14T11:17:58.561Z",
     "name" : "portfolio work from home",
     "notes" : "",
     "num_hearts" : 0,
@@ -29126,10 +29126,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178672675645603",
-        "color" : "yellow-green",
+        "gid" : "1178672675711142",
+        "color" : "blue-green",
         "enabled" : true,
-        "name" : "lecture",
+        "name" : "demo",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -29160,7 +29160,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-11T18:32:34.299Z",
+    "modified_at" : "2020-06-15T07:58:32.965Z",
     "name" : "career accelerator 1",
     "notes" : "",
     "num_hearts" : 0,
@@ -29253,10 +29253,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178672675645603",
-        "color" : "yellow-green",
+        "gid" : "1178672675711142",
+        "color" : "blue-green",
         "enabled" : true,
-        "name" : "lecture",
+        "name" : "demo",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -29287,7 +29287,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:49:06.509Z",
+    "modified_at" : "2020-06-15T07:21:57.895Z",
     "name" : "technical interviews",
     "notes" : "",
     "num_hearts" : 0,
@@ -29380,10 +29380,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178672675645603",
-        "color" : "yellow-green",
+        "gid" : "1178672675711142",
+        "color" : "blue-green",
         "enabled" : true,
-        "name" : "lecture",
+        "name" : "demo",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -29414,7 +29414,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-03T15:49:33.355Z",
+    "modified_at" : "2020-06-15T07:58:32.703Z",
     "name" : "teacher assistant introduction",
     "notes" : "",
     "num_hearts" : 0,
@@ -29507,10 +29507,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178672675645603",
-        "color" : "yellow-green",
+        "gid" : "1178672675711142",
+        "color" : "blue-green",
         "enabled" : true,
-        "name" : "lecture",
+        "name" : "demo",
         "resource_type" : "enum_option"
       },
       "name" : "type",
@@ -29541,7 +29541,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-11T18:32:43.042Z",
+    "modified_at" : "2020-06-15T07:21:55.696Z",
     "name" : "career accelerator 2",
     "notes" : "",
     "num_hearts" : 0,

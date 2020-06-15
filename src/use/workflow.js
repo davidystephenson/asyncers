@@ -11,16 +11,33 @@ function parse (field) {
 }
 
 function format (name, fields) {
-  const [, block, interrupt] = fields
+  const [
+    ,
+    blocking,
+    interruptible,
+    teacher,
+    lecturer
+  ] = fields.map(parse)
 
-  const blocking = parse(block)
-  const interruptible = parse(interrupt)
-
-  return { name, blocking, interruptible }
+  return {
+    name,
+    blocking,
+    interruptible,
+    teacher,
+    lecturer
+  }
 }
 
 export default function useWorkflow () {
-  const types = useAsana(workflow, format)
+  const rows = useAsana(workflow, format)
+
+  function reduce (types, row) {
+    types[row.name] = row
+
+    return types
+  }
+
+  const types = rows.reduce(reduce, {})
 
   return { types }
 }

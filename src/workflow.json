@@ -135,6 +135,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -159,7 +213,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:23.640Z",
+    "modified_at" : "2020-06-14T19:07:14.363Z",
     "name" : "welcome",
     "notes" : "Orient students to the course.\n\nHighest priority because students need to get started working as soon as possible. Being a lost student is very unpleasant.",
     "num_hearts" : 0,
@@ -316,6 +370,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -340,7 +448,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-05T12:08:30.024Z",
+    "modified_at" : "2020-06-14T19:07:16.066Z",
     "name" : "hotline",
     "notes" : "Teacher actively making themself available to help students working on exercises and projects.\n\nThere should always be at least 1 hotline available while students are working. A core part of Codaisseur's value proposition is that students can get help when they need it.",
     "num_hearts" : 0,
@@ -497,6 +605,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -521,7 +683,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:27.339Z",
+    "modified_at" : "2020-06-14T19:07:26.595Z",
     "name" : "kickoff",
     "notes" : "Teacher-led group activity that initiates an unsupervised activity.\n\nVery high priority so students can start their work and focus on related topics.",
     "num_hearts" : 0,
@@ -678,6 +840,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -702,7 +918,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:28.897Z",
+    "modified_at" : "2020-06-14T19:07:28.633Z",
     "name" : "evaluation",
     "notes" : "Review student work to determine advancement in the course.\n\nVery high priority so that students do not wait nervously or work inappropriately. Students can wait a few minutes, and might accept an extension, but deserve to processed urgently.",
     "num_hearts" : 0,
@@ -822,10 +1038,10 @@
         "resource_type" : "enum_option"
       } ],
       "enum_value" : {
-        "gid" : "1178970325468118",
-        "color" : "red",
+        "gid" : "1178970325466053",
+        "color" : "green",
         "enabled" : true,
-        "name" : "no",
+        "name" : "yes",
         "resource_type" : "enum_option"
       },
       "name" : "blocking",
@@ -859,6 +1075,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -883,7 +1153,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:35.811Z",
+    "modified_at" : "2020-06-14T19:07:30.377Z",
     "name" : "feedback",
     "notes" : "Teacher-student one-on-one session to review student work a subject.\n\nHigh priority so students can make informed decisions about their progress. Feedback is not blocking, and does not need to be immediately after finishing the subject. If students are waiting for feedback, they can continue working on their exercises and projects. Teachers can interrupt working students to give them feedback when ready.",
     "num_hearts" : 0,
@@ -1040,6 +1310,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -1064,7 +1388,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:37.792Z",
+    "modified_at" : "2020-06-14T19:07:34.560Z",
     "name" : "lecture",
     "notes" : "Teacher-led group activity to educate students.\n\nNot as high priority because the reader provides learning resources that students can use independently. Lectures are not blocking. Teachers can interrupt working students to lecture them when ready.\n\nThis means lecturers and learning developers must do the hard work of creating flexible materials. Students will always start sections with different backgrounds, so we have to do it anyway.\n\nLectures do not block students from progress on exercises. Students work through their exercises without waiting for the next lecture. Some students may receive a relevant lecture after completing an exercise, while others in the same lecture are just about to start it.\n\nStudents are eligible students receive a lecture when, they complete all previous activities.\n    A teacher is available to give the lecture.\n    The teacher decides there are enough eligible students.\n",
     "num_hearts" : 0,
@@ -1221,6 +1545,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -1245,7 +1623,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:50.564Z",
+    "modified_at" : "2020-06-14T19:07:36.360Z",
     "name" : "demo",
     "notes" : "Teacher-led group activity to review student work on a subject. \n\nNot as high priority because students can often continue working or move on to another subject.\n\nIf students or teachers are not ready to demo, students continue working on their current task until everyone is ready.",
     "num_hearts" : 0,
@@ -1402,6 +1780,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -1426,7 +1858,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:41.484Z",
+    "modified_at" : "2020-06-14T19:07:48.060Z",
     "name" : "exercise",
     "notes" : "Student-led learning activity with step by step instructions written in the reader that explain what students are learning and how they know when they are done.\n\nAll exercises are linked as a single thread in the reader. Students start working on the first exercise on day 1, and continue through the thread whenever they are not otherwise occupied.\n\nStudents are primarily responsible for making and assessing progress during exercises, but there is always a hotline to support them. ",
     "num_hearts" : 0,
@@ -1583,6 +2015,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -1607,9 +2093,9 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-05T12:08:04.722Z",
+    "modified_at" : "2020-06-14T19:07:49.368Z",
     "name" : "project",
-    "notes" : "Student-led learning activity where students work creatively without step-by-step instructions. Typically scoped by time, not product state.\n\nSome projects are blocked by a kickoff and close with a demo. If students or teachers are not ready to kickoff, students continue with their exercises. If students or teachers are not ready to demo, students continue with the project.\n\nStudents are primarily responsible for making and assessing progress during projects, but there is always a hotline to support them.",
+    "notes" : "Student-led learning activity where students work creatively without step-by-step instructions. Typically scoped by time, not product state.\n\nSome projects are blocked by a kickoff and close with a demo. If students or teachers are not ready to kickoff, students continue with their exercises. If students or teachers are not ready to demo, students continue with the project.\n\nStudents are primarily responsible for making and assessing progress during projects, but there is always a hotline to support them.\n\nSome projects are done independently without teacher support. Often these projects are evaluated to determine success in the course.",
     "num_hearts" : 0,
     "num_likes" : 0,
     "parent" : null,
@@ -1764,6 +2250,60 @@
       "resource_subtype" : "enum",
       "resource_type" : "custom_field",
       "type" : "enum"
+    }, {
+      "gid" : "1180252221065394",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065395",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065396",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "teacher",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
+    }, {
+      "gid" : "1180252221065409",
+      "enabled" : true,
+      "enum_options" : [ {
+        "gid" : "1180252221065410",
+        "color" : "green",
+        "enabled" : true,
+        "name" : "yes",
+        "resource_type" : "enum_option"
+      }, {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      } ],
+      "enum_value" : {
+        "gid" : "1180252221065411",
+        "color" : "red",
+        "enabled" : true,
+        "name" : "no",
+        "resource_type" : "enum_option"
+      },
+      "name" : "lecturer",
+      "resource_subtype" : "enum",
+      "resource_type" : "custom_field",
+      "type" : "enum"
     } ],
     "due_at" : null,
     "due_on" : null,
@@ -1788,7 +2328,7 @@
         "resource_type" : "section"
       }
     } ],
-    "modified_at" : "2020-06-04T21:47:46.226Z",
+    "modified_at" : "2020-06-14T19:07:51.306Z",
     "name" : "independent",
     "notes" : "Student-only activity that students execute on their own.\n\nStudents and teachers are typically not in contact during independent activities.",
     "num_hearts" : 0,

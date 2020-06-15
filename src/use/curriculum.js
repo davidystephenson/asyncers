@@ -1,20 +1,17 @@
 import curriculum from '../curriculum.json'
 
-import useAsana from '../use/asana'
-import useWorkflow from '../use/workflow'
+import useAsana from './asana'
+import useWorkflow from './workflow'
 
 export default function useCurriculum () {
   const { types } = useWorkflow()
 
   function format (name, fields) {
-    const [type] = fields
+    const [key] = fields
 
-    const work = types
-      .find(element => element.name === type)
+    const type = types[key]
 
-    const { blocking } = work
-
-    return { name, type, blocking }
+    return { name, type }
   }
 
   const sections = useAsana(curriculum, format)
@@ -27,7 +24,7 @@ export default function useCurriculum () {
     }
 
     return sections
-      .filter(section => section.type === type)
+      .filter(section => section.type.name === type)
       .map(mark)
   }
 
@@ -45,13 +42,19 @@ export default function useCurriculum () {
   const nonBlocking = []
 
   function parse (section) {
-    section.blocking
+    section.type.blocking
       ? blocking.push(section)
       : nonBlocking.push(section)
 
-    section.retry = section
-      .name
-      .includes('retry')
+    function includes (text) {
+      return section.name.includes(text)
+    }
+
+    section.retry = includes('retry')
+
+    if (section.retry) {
+      section.first = includes('first')
+    }
   }
 
   sections.forEach(parse)

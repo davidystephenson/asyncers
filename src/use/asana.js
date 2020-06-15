@@ -12,9 +12,11 @@ export default function useAsana (
   function parse (
     { custom_fields: custom, name }, index
   ) {
+    const lower = name.toLowerCase()
+
     const extracted = custom.map(extract)
 
-    const formatted = format(name, extracted)
+    const formatted = format(lower, extracted)
 
     formatted.index = index
 
