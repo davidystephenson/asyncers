@@ -7,14 +7,19 @@ import Hours from '../view/Hours'
 export default function useStatus (
   status, reducer, View
 ) {
-  status = status.toLowerCase()
+  status = status && status.toLowerCase()
 
   const students = useContext(studentsContext)
+
+  function isStatus (section) {
+    if (status) return section[status]
+    else return true
+  }
 
   function track (done, student) {
     const did = student
       .sections
-      .filter(section => section[status])
+      .filter(isStatus)
 
     return [...done, ...did]
   }

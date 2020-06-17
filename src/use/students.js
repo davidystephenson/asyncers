@@ -25,6 +25,18 @@ function notDone (section) {
   return !section.done
 }
 
+function reduce (accumulator, attempt) {
+  const [retry, passed] = accumulator
+
+  if (attempt.retry) {
+    retry.push(attempt)
+  } else {
+    passed.push(attempt)
+  }
+
+  return accumulator
+}
+
 export default function useStudents () {
   const course = useContext(curriculumContext)
   const {
@@ -73,11 +85,8 @@ export default function useStudents () {
               .name === 'portfolio evaluation'
           )
 
-        const retry = attempts
-          .some(attempt => attempt.retry)
-
-        const passed = attempts
-          .some(attempt => !attempt.retry)
+        const [retry, passed] = attempts
+          .reduce(reduce, [[], []])
 
         if (retry && !passed) data.done = null
       }
@@ -116,8 +125,6 @@ export default function useStudents () {
       .sections
       .map(check)
 
-    console.log('sections test:', JSON.stringify(sections, null, 2))
-
     const useful = sections
       .filter(section => {
         const { retry, retried } = section
@@ -155,17 +162,6 @@ export default function useStudents () {
 
       const didnt = valid[index]
 
-      if (didnt) {
-        console.log('didnt test:', didnt)
-
-        const backup = theirs
-          .find(report => report.section === didnt.name)
-
-        console.log('theirs test:', theirs)
-
-        console.log('backup test:', backup)
-      }
-
       if (index === 0) {
         const before = useful
           .slice(0, didnt.index)
@@ -192,9 +188,7 @@ export default function useStudents () {
           didnt.since = new Date()
         }
       } else {
-        console.log('index test:', index)
         const since = valid[index - 1]
-        console.log('since test:', since)
         didnt.since = since.done.date
       }
 
@@ -240,18 +234,12 @@ export default function useStudents () {
         return null
       }
 
-      console.log('focused test:', focused)
-
       const index = useful.findIndex(
         element => element.name === focused.name
       )
 
       const relation = RELATIONS
         .find(relation => relation[0] === focused.name)
-
-      console.log('relation test:', relation)
-
-      console.log('index test:', index)
 
       const before = useful.slice(0, index)
 
@@ -274,17 +262,7 @@ export default function useStudents () {
         return true
       }
 
-      function reject (section) {
-        return !consider(section)
-      }
-
-      const rejected = before.find(reject)
-
-      console.log('rejected test:', rejected)
-
       const all = before.every(consider)
-
-      console.log('all test:', all)
 
       if (all) {
         focused.next = true

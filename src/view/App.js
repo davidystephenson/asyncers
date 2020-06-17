@@ -12,9 +12,8 @@ import {
   StudentsProvider
 } from '../lib'
 
+import Agenda from './Agenda'
 import Courseboard from './Courseboard'
-import Skipped from './Skipped'
-import Status from './Status'
 
 export default function App () {
   return (
@@ -24,12 +23,8 @@ export default function App () {
           <CurriculumProvider>
             <ReportsProvider>
               <StudentsProvider>
+                <Agenda />
                 <Courseboard />
-
-                <Skipped />
-                <Status status='Blocked' />
-                <Status status='Waiting' />
-                <Status status='Working' />
               </StudentsProvider>
             </ReportsProvider>
           </CurriculumProvider>

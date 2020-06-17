@@ -12,8 +12,6 @@ export default function useReports () {
 
   const { types } = useWorkflow()
 
-  console.log('types test:', types)
-
   const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/evaluations'
 
   const response = useFetch(URL)
@@ -38,8 +36,6 @@ export default function useReports () {
     const score = extract('score')
     const comments = extract('comments')
     const retry = extract('retry')
-
-    console.log('section test:', section)
 
     const { index } = sections.find(
       element => element.name === section
@@ -66,7 +62,6 @@ export default function useReports () {
   }
 
   if (response.data) {
-    console.log('reponse.data test:', response.data)
     const raw = response.data.evaluations
 
     const parsed = raw.map(parse)

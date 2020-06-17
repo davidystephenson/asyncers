@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 
 import Section from './Section'
+import SectionBadge from './SectionBadge'
 import Table from './SmallTable'
 import Thead from './Thead'
 
@@ -30,12 +31,13 @@ export default function Courseboard () {
 
     const cells = students.map(Cell)
 
-    const { name, type } = section
+    const badge = (
+      <SectionBadge section={section} />
+    )
 
     return (
-      <tr key={name}>
-        <td>{name}</td>
-        <td>{type.name}</td>
+      <tr key={section.name}>
+        <td>{badge}</td>
         {cells}
       </tr>
     )
@@ -54,7 +56,6 @@ export default function Courseboard () {
   const head = (
     <Thead>
       <th>Section</th>
-      <th>Type</th>
       {heads}
     </Thead>
   )

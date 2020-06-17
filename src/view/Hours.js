@@ -1,15 +1,17 @@
 import React from 'react'
 
-import BlueBadge from './BlueBadge'
+import Badge from 'react-bootstrap/Badge'
+import StatusBadge from './StatusBadge'
 
 export default function Hours (
-  { student, hours }, index
+  { student, hours, status }, index
 ) {
   const key = `${student}${hours}${index}`
+  const badge = <Badge variant='light'>{hours}h</Badge>
 
   return (
-    <BlueBadge key={key}>
-      {student} ({hours}h)
-    </BlueBadge>
+    <StatusBadge status={status} key={key}>
+      {student} {badge}
+    </StatusBadge>
   )
 }

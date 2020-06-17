@@ -10,11 +10,12 @@ export default function Rows () {
   } = useContext(tableContext)
 
   function Rower (datum, index) {
+    const { key, ...data } = datum
     const keyValue = datum[keyName]
 
-    const key = keyValue || index
+    const value = key || keyValue || index
 
-    return <Row data={datum} key={key} />
+    return <Row data={data} key={value} />
   }
 
   const trs = data.map(Rower)

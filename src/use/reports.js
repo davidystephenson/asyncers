@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 
-import { curriculumContext } from '../lib/'
+import { curriculumContext } from '../lib'
+import { hoursFromNow } from '../lib/utils'
 
 import useFetch from './fetch'
 
@@ -73,11 +74,13 @@ export default function useReports () {
 
     const epoch = Date.parse(report.timestamp)
     const date = new Date(epoch)
+    const hours = hoursFromNow(date)
     // TODO remove
     const time = date.toISOString()
 
     return {
       date,
+      hours,
       epoch,
       section,
       student,

@@ -5,10 +5,12 @@ function format ({
   blocked, done, ignored, skipped, waiting, working
 }) {
   if (done) {
+    const text = `${done.hours}h`
+
     return {
       background: 'green',
       color: 'white',
-      text: done.time
+      text
     }
   }
 
