@@ -17,7 +17,7 @@ import Courseboard from './Courseboard'
 
 export default function App () {
   return (
-    <Container>
+    <Container fluid>
       <Row>
         <Col>
           <CurriculumProvider>

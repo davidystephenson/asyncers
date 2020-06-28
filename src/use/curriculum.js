@@ -1,20 +1,34 @@
-import curriculum from '../curriculum.json'
+import extractor from '../lib/extractor'
 
-import useAsana from './asana'
 import useWorkflow from './workflow'
+import useSheet from './sheet'
 
 export default function useCurriculum () {
   const { types } = useWorkflow()
 
-  function format (name, fields) {
-    const [key] = fields
+  const response = useSheet('curriculum')
 
-    const type = types[key]
+  const { data: { curriculum } } = response
 
-    return { name, type }
+  let sections = curriculum || []
+
+  if (sections.length) {
+    const keys = Object.keys(sections[0])
+
+    sections = sections.map(section => {
+      const extract = extractor(section)
+
+      const copy = {}
+
+      keys.forEach(key => {
+        copy[key] = extract(key)
+      })
+
+      copy.type = types[section.type]
+
+      return copy
+    })
   }
-
-  const sections = useAsana(curriculum, format)
 
   function byType (type) {
     function mark (section, index) {
@@ -41,7 +55,7 @@ export default function useCurriculum () {
   const blocking = []
   const nonBlocking = []
 
-  function parse (section) {
+  const parse = function parse (section) {
     section.type.blocking
       ? blocking.push(section)
       : nonBlocking.push(section)

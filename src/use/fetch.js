@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
 import hoping from 'hoping'
 
-export default function useFetch (url) {
-  const [data, setData] = useState()
+export default function useFetch (
+  url, initial = {}
+) {
+  const [data, setData] = useState(initial)
   const [loading, setLoading] = useState(false)
 
   async function get () {

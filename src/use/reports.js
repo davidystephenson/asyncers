@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import { curriculumContext } from '../lib'
 import { hoursFromNow } from '../lib/utils'
 
-import useFetch from './fetch'
+import useSheet from './sheet'
 
 const DEMO = 'whatDemoDidYouFinish?'
 const EXERCISE = 'whatExerciseDidYouFinish?'
@@ -22,9 +22,9 @@ export default function useReports () {
     sections
   } = useContext(curriculumContext)
 
-  const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/reports'
+  const response = useSheet('reports')
 
-  const response = useFetch(URL)
+  console.log('response test:', response)
 
   const copy = { ...response, reports: [] }
 
@@ -64,13 +64,15 @@ export default function useReports () {
     }
 
     const section = types[type]
-    const entity = sections
+    const found = sections
       .find(({ name }) => name === section)
 
-    if (!entity) {
+    if (!found) {
       console.warn('missing section:', section)
       console.warn('available sections:', sections)
     }
+
+    const entity = found || {}
 
     const epoch = Date.parse(report.timestamp)
     const date = new Date(epoch)
@@ -94,7 +96,7 @@ export default function useReports () {
   }
 
   if (response.data) {
-    const raw = response.data.reports
+    const raw = response.data.reports || []
 
     const parsed = raw.map(parse)
 

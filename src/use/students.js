@@ -59,9 +59,13 @@ export default function useStudents () {
     }
 
     function check (section, index) {
-      const {
+      let {
         name, first, retry, type
       } = section
+
+      if (name === 'basic debugging') {
+        name = 'defensive coding'
+      }
 
       function after (element) {
         return element.index > index

@@ -2,7 +2,7 @@ import { useContext } from 'react'
 
 import { curriculumContext } from '../lib/'
 
-import useFetch from './fetch'
+import useSheet from './sheet'
 import useWorkflow from './workflow'
 
 export default function useReports () {
@@ -12,9 +12,7 @@ export default function useReports () {
 
   const { types } = useWorkflow()
 
-  const URL = 'https://v2-api.sheety.co/f8d9905dd113821929ea3ad4e3f09c41/progress/evaluations'
-
-  const response = useFetch(URL)
+  const response = useSheet('evaluations')
 
   const copy = { ...response, reports: [] }
 
@@ -62,7 +60,7 @@ export default function useReports () {
   }
 
   if (response.data) {
-    const raw = response.data.evaluations
+    const raw = response.data.evaluations || []
 
     const parsed = raw.map(parse)
 
