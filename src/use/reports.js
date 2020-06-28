@@ -24,8 +24,6 @@ export default function useReports () {
 
   const response = useSheet('reports')
 
-  console.log('response test:', response)
-
   const copy = { ...response, reports: [] }
 
   function parse (report) {
@@ -67,9 +65,11 @@ export default function useReports () {
     const found = sections
       .find(({ name }) => name === section)
 
-    if (!found) {
-      console.warn('missing section:', section)
-      console.warn('available sections:', sections)
+    if (sections.length && !found) {
+      console
+        .warn('missing section:', section)
+      console
+        .warn('available sections:', sections)
     }
 
     const entity = found || {}
